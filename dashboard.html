@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Invest Space</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            padding: 4rem 0;
+            margin-top: 80px;
+        }
+
+        .dashboard-sidebar {
+            padding: 2rem;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .user-profile {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .dashboard-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dashboard-nav a {
+            padding: 1rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .dashboard-nav a:hover, .dashboard-nav a.active {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+        }
+
+        .dashboard-content {
+            padding: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .stat-card .value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .saved-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .property-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .property-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .property-content {
+            padding: 1.5rem;
+        }
+
+        .property-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .dashboard-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="home.html" class="logo">
+                <i data-lucide="building-2"></i> Invest<span>Space</span>
+            </a>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="properties.html">Properties</a>
+                <a href="education.html">Education</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container dashboard-layout">
+        <aside class="glass-panel dashboard-sidebar animate-up">
+            <div class="user-profile">
+                <div class="user-avatar">K</div>
+                <h3>Khamesh</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Premium Investor</p>
+            </div>
+            <nav class="dashboard-nav">
+                <a href="#" class="active"><i data-lucide="layout-dashboard"></i> Overview</a>
+                <a href="#saved"><i data-lucide="heart"></i> Saved Properties</a>
+                <a href="#"><i data-lucide="settings"></i> Settings</a>
+                <a href="#" id="logout-btn" style="color: #ef4444;"><i data-lucide="log-out"></i> Sign Out</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-content">
+            <h1 style="margin-bottom: 2rem;">Welcome back, Khamesh!</h1>
+            
+            <div class="stats-grid">
+                <div class="glass-panel stat-card">
+                    <div class="value" id="saved-count">0</div>
+                    <div style="color: var(--text-muted);">Saved Properties</div>
+                </div>
+                <div class="glass-panel stat-card">
+                    <div class="value">2</div>
+                    <div style="color: var(--text-muted);">Active Inquiries</div>
+                </div>
+                <div class="glass-panel stat-card">
+                    <div class="value">12%</div>
+                    <div style="color: var(--text-muted);">Target ROI</div>
+                </div>
+            </div>
+
+            <h2 id="saved" style="margin-bottom: 1.5rem;">Your Saved Properties</h2>
+            <div class="saved-grid" id="dashboard-saved-container">
+                <!-- Saved properties will be injected here by JS -->
+                <p style="color: var(--text-muted);">You haven't saved any properties yet. Go to the <a href="properties.html" style="color: var(--accent);">Properties page</a> to start building your portfolio!</p>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top: 0;">
+                <p>&copy; 2026 Invest Space. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Logout logic
+        document.getElementById('logout-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            sessionStorage.removeItem('isLoggedIn');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Invest Space</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .about-img {
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--glass-border);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .team-member-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--accent);
+            padding: 5px;
+        }
+
+        .stats-banner {
+            background: linear-gradient(90deg, var(--primary), var(--bg-dark));
+            padding: 4rem 0;
+            margin: 4rem 0;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="home.html" class="logo">
+                <i data-lucide="building-2"></i> Invest<span>Space</span>
+            </a>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="properties.html">Properties</a>
+                <a href="education.html">Education</a>
+                <a href="about.html" class="active">About</a>
+                <a href="services.html">Services</a>`n                <a href="dashboard.html">Dashboard</a>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Redefining Real Estate Investment</h1>
+            <p>We are a team of passionate experts dedicated to helping you build lasting wealth through strategic property investments.</p>
+        </div>
+    </header>
+
+    <div class="container about-grid">
+        <div>
+            <span class="section-subtitle">Our Story</span>
+            <h2 class="section-title">A Legacy of Excellence</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Founded in 2015, Invest Space was born from a simple idea: real estate investment shouldn't be an exclusive club. We set out to democratize access to premium, high-yield properties.</p>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Today, we manage a portfolio of over $500M in assets, providing our clients with unparalleled market insights, secure transaction processes, and comprehensive property management services.</p>
+            <a href="contact.html" class="btn btn-outline">Join Our Network</a>
+        </div>
+        <div>
+            <img src="images/property_2.png" alt="Our Headquarters" class="about-img">
+        </div>
+    </div>
+
+    <div class="stats-banner">
+        <div class="container stats-grid">
+            <div>
+                <div class="stat-number">$500M+</div>
+                <div style="color: var(--text-muted);">Assets Managed</div>
+            </div>
+            <div>
+                <div class="stat-number">1,200+</div>
+                <div style="color: var(--text-muted);">Happy Investors</div>
+            </div>
+            <div>
+                <div class="stat-number">45</div>
+                <div style="color: var(--text-muted);">Cities Covered</div>
+            </div>
+            <div>
+                <div class="stat-number">12%</div>
+                <div style="color: var(--text-muted);">Avg. Annual Yield</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-bottom: 6rem;">
+        <div class="text-center" style="text-align: center;">
+            <span class="section-subtitle">Our Leadership</span>
+            <h2 class="section-title">Meet The Experts</h2>
+        </div>
+        <div class="team-grid">
+            <div class="glass-panel team-member">
+                <img src="https://ui-avatars.com/api/?name=Michael+Chen&background=10b981&color=fff&size=150" alt="Michael Chen" class="team-member-img">
+                <h3>Michael Chen</h3>
+                <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem;">CEO & Founder</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Former Wall Street executive with 15 years of institutional real estate experience.</p>
+            </div>
+            <div class="glass-panel team-member">
+                <img src="https://ui-avatars.com/api/?name=Sarah+Jenkins&background=10b981&color=fff&size=150" alt="Sarah Jenkins" class="team-member-img">
+                <h3>Sarah Jenkins</h3>
+                <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem;">Head of Acquisitions</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Expert in identifying undervalued properties in high-growth emerging markets.</p>
+            </div>
+            <div class="glass-panel team-member">
+                <img src="https://ui-avatars.com/api/?name=David+Miller&background=10b981&color=fff&size=150" alt="David Miller" class="team-member-img">
+                <h3>David Miller</h3>
+                <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem;">Chief Financial Officer</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Specializes in creative financing, tax optimization, and portfolio risk management.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top: 0;">
+                <p>&copy; 2026 Invest Space. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

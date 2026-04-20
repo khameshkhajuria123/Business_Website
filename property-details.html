@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details | Invest Space</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .details-hero {
+            height: 60vh;
+            background: url('images/property_1.png') center/cover;
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .details-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+            padding: 4rem 0;
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .main-content {
+            background: var(--bg-dark);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .property-header {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-item i {
+            color: var(--accent);
+        }
+
+        .contact-form-widget {
+            position: sticky;
+            top: 100px;
+        }
+
+        @media (max-width: 900px) {
+            .details-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="home.html" class="logo">
+                <i data-lucide="building-2"></i> Invest<span>Space</span>
+            </a>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="properties.html" class="active">Properties</a>
+                <a href="education.html">Education</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>`n                <a href="dashboard.html">Dashboard</a>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="details-hero"></div>
+
+    <div class="container details-layout">
+        <main class="main-content shadow-lg">
+            <div class="property-header">
+                <div class="price">$1,250,000</div>
+                <h1>Skyline View Penthouse</h1>
+                <p style="color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
+                    <i data-lucide="map-pin" style="width: 18px;"></i> Downtown Miami, FL
+                </p>
+                
+                <div class="features-list">
+                    <div class="feature-item"><i data-lucide="bed"></i> 3 Bedrooms</div>
+                    <div class="feature-item"><i data-lucide="bath"></i> 2 Bathrooms</div>
+                    <div class="feature-item"><i data-lucide="square"></i> 2,400 sqft</div>
+                    <div class="feature-item"><i data-lucide="car"></i> 2 Parking</div>
+                    <div class="feature-item"><i data-lucide="calendar"></i> Built 2023</div>
+                    <div class="feature-item"><i data-lucide="home"></i> Apartment</div>
+                </div>
+            </div>
+
+            <h2>About This Property</h2>
+            <p style="color: var(--text-muted); margin-top: 1rem; line-height: 1.8;">
+                Experience ultimate luxury in this stunning penthouse located in the heart of Downtown Miami. 
+                Featuring floor-to-ceiling windows, this property offers panoramic views of the city skyline and the ocean. 
+                The open-concept living area flows seamlessly into a state-of-the-art chef's kitchen equipped with top-of-the-line appliances. 
+                Perfect for entertaining or relaxing in style. Highly lucrative potential for short-term and long-term rentals.
+            </p>
+
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--glass-border);">
+                <h2>Mortgage Calculator</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+                    <div>
+                        <div class="form-group">
+                            <label class="form-label">Down Payment (%)</label>
+                            <input type="range" id="calc-down" min="0" max="100" value="20" style="width: 100%;">
+                            <div style="text-align: right; color: var(--accent); font-weight: 600;" id="calc-down-val">20%</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Interest Rate (%)</label>
+                            <input type="range" id="calc-rate" min="1" max="15" step="0.1" value="6.5" style="width: 100%;">
+                            <div style="text-align: right; color: var(--accent); font-weight: 600;" id="calc-rate-val">6.5%</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Loan Term (Years)</label>
+                            <select id="calc-term" class="form-control" style="background: var(--bg-dark);">
+                                <option value="15">15 Years</option>
+                                <option value="30" selected>30 Years</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 2rem; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Estimated Monthly Payment</p>
+                        <div style="font-size: 3rem; font-weight: 800; color: var(--accent);" id="calc-result">...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="glass-panel contact-form-widget" style="padding: 2rem;">
+                <h3 style="margin-bottom: 1.5rem;">Interested in this property?</h3>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="4" required>I am interested in the Skyline View Penthouse.</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Request Details</button>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

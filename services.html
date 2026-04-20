@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Invest Space</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            padding: 4rem 0;
+        }
+
+        .service-card {
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .service-link {
+            color: var(--accent);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .service-link:hover {
+            gap: 0.8rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9)), url('images/hero_bg.png') center/cover;
+            padding: 6rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="home.html" class="logo">
+                <i data-lucide="building-2"></i> Invest<span>Space</span>
+            </a>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="properties.html">Properties</a>
+                <a href="education.html">Education</a>
+                <a href="about.html">About</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Comprehensive Investment Services</h1>
+            <p>From acquisition to management, we provide end-to-end solutions for real estate investors.</p>
+        </div>
+    </header>
+
+    <div class="container services-grid">
+        <div class="glass-panel service-card">
+            <div class="service-icon">
+                <i data-lucide="target"></i>
+            </div>
+            <h3>Property Acquisition</h3>
+            <p>We leverage our extensive network to find off-market, high-yield properties before they hit the open market. Our team conducts rigorous due diligence to ensure maximum profitability.</p>
+            <a href="contact.html" class="service-link">Learn More <i data-lucide="arrow-right" style="width: 18px;"></i></a>
+        </div>
+
+        <div class="glass-panel service-card">
+            <div class="service-icon">
+                <i data-lucide="briefcase"></i>
+            </div>
+            <h3>Portfolio Management</h3>
+            <p>For high-net-worth individuals, we offer bespoke portfolio management. We diversify your assets across different property types and geographic locations to mitigate risk and maximize returns.</p>
+            <a href="contact.html" class="service-link">Learn More <i data-lucide="arrow-right" style="width: 18px;"></i></a>
+        </div>
+
+        <div class="glass-panel service-card">
+            <div class="service-icon">
+                <i data-lucide="home"></i>
+            </div>
+            <h3>Property Management</h3>
+            <p>Enjoy passive income without the headaches. Our in-house management team handles tenant screening, maintenance, rent collection, and legal compliance.</p>
+            <a href="contact.html" class="service-link">Learn More <i data-lucide="arrow-right" style="width: 18px;"></i></a>
+        </div>
+
+        <div class="glass-panel service-card">
+            <div class="service-icon">
+                <i data-lucide="calculator"></i>
+            </div>
+            <h3>Financial Structuring</h3>
+            <p>Optimize your tax strategy and financing options. Our financial experts will help you structure your deals to maximize leverage and minimize tax liabilities using tools like 1031 exchanges.</p>
+            <a href="contact.html" class="service-link">Learn More <i data-lucide="arrow-right" style="width: 18px;"></i></a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff; background: none; -webkit-text-fill-color: #fff;">Ready to Build Your Wealth?</h2>
+            <p style="color: #e2e8f0; font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Schedule a free consultation with our investment advisors to discuss your goals and how our services can help you achieve them.</p>
+            <a href="contact.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 3rem;">Schedule Consultation</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top: 0;">
+                <p>&copy; 2026 Invest Space. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

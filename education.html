@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Hub | Invest Space</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            padding: 4rem 0;
+        }
+
+        .blog-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-category {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .blog-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="home.html" class="logo">
+                <i data-lucide="building-2"></i> Invest<span>Space</span>
+            </a>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="properties.html">Properties</a>
+                <a href="education.html" class="active">Education</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>`n                <a href="dashboard.html">Dashboard</a>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Investor Education Hub</h1>
+            <p>Learn from industry experts and take your real estate investment knowledge to the next level.</p>
+        </div>
+    </header>
+
+    <main class="container blog-grid">
+        <!-- Blog Post 1 -->
+        <a href="article.html" class="glass-panel blog-card">
+            <img src="images/blog_1.png" alt="Investors looking at charts" class="blog-img">
+            <div class="blog-content">
+                <div class="blog-category">Market Analysis</div>
+                <h2 class="blog-title">Top Emerging Real Estate Markets in 2026</h2>
+                <p class="blog-excerpt">Discover which cities are showing the highest potential for cash flow and appreciation in the upcoming year.</p>
+                <div class="blog-meta">
+                    <span>By Sarah Jenkins</span>
+                    <span>Oct 15, 2026</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Blog Post 2 -->
+        <a href="article.html" class="glass-panel blog-card">
+            <img src="images/hero_bg.png" alt="Luxury home exterior" class="blog-img">
+            <div class="blog-content">
+                <div class="blog-category">Strategies</div>
+                <h2 class="blog-title">The BRRRR Method: A Step-by-Step Guide</h2>
+                <p class="blog-excerpt">Learn how to Buy, Rehab, Rent, Refinance, and Repeat your way to a massive real estate portfolio.</p>
+                <div class="blog-meta">
+                    <span>By Mark Davidson</span>
+                    <span>Sep 28, 2026</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Blog Post 3 -->
+        <a href="article.html" class="glass-panel blog-card">
+            <img src="images/property_1.png" alt="Apartment interior" class="blog-img">
+            <div class="blog-content">
+                <div class="blog-category">Finance</div>
+                <h2 class="blog-title">Creative Financing for Your First Investment</h2>
+                <p class="blog-excerpt">Don't have 20% down? Here are creative ways to finance your first profitable rental property.</p>
+                <div class="blog-meta">
+                    <span>By Amanda Lewis</span>
+                    <span>Sep 12, 2026</span>
+                </div>
+            </div>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top: 0;">
+                <p>&copy; 2026 Invest Space. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
